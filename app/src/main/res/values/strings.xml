@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">SergeevaAA_01_03</string>
+
+    <string name="registration">Регистрация</string>
+    <string name="textreg">Введите ваш логин и пароль</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="enter">Войти</string>
+
+    <string name="square">Расчёт площади</string>
+    <string name="number">введите количество метров</string>
+    <string name="calculation">Расчитать</string>
+    <string name="result">Результат</string>
+
+    <string name="textres">Результат расчёта</string>
+    <string name="textnum">Метры</string>
+    <string name="_1_1">1. 1-комнатная квартира</string>
+
+    <string-array name="Apartment">
+        <item>1. 1-комнатная квартира</item>
+        <item>2. 2-комнатная квартира</item>
+        <item>3. 3-комнатная квартира</item>
+        <item>Студия</item>
+    </string-array>
+</resources>

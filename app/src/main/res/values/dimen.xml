@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="thisis36sp">36sp</dimen>
+    <dimen name="thisis24sp">24sp</dimen>
+    <dimen name="thisis14sp">14sp</dimen>
+</resources>
