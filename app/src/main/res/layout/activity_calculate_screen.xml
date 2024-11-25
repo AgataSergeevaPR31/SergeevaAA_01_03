@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,6 +38,9 @@
             </TextView>
 
         </LinearLayout>
+
+
+
 
     </LinearLayout>
 
@@ -117,6 +120,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.604"
+        tools:ignore="MissingConstraints">
+
+    </TextView>
+
+    <ImageView
+        android:layout_width="68dp"
+        android:layout_height="67dp"
+        app:srcCompat="@drawable/strel"
+        android:onClick="onFlatScreen"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="TODO">
+
+    </ImageView>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="175sp"
+        android:layout_height="30sp"
+        android:text="@string/vendetta"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
         tools:ignore="MissingConstraints">
 
     </TextView>

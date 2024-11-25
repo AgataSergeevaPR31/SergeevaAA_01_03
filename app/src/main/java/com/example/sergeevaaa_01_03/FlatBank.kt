@@ -6,10 +6,15 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import com.google.android.material.snackbar.Snackbar
 
 class FlatBank : AppCompatActivity() {
     private lateinit var login: EditText
     private lateinit var pass: EditText
+
+    //корректные логин и пароль, которые должен ввести пользователь для продолжения работы с приложеним
+    private val correctLogin = "ects"
+    private val correctPassword = "ects2024"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,14 +23,23 @@ class FlatBank : AppCompatActivity() {
         pass = findViewById<EditText>(R.id.password)
     }
 
+    //событие для перехода на второй экран с функцией расчёта стоимости квартиры
     fun onCalculaterScreen(view: View) {
+        //проверка на то, что поля для ввода логина и пароля не пустые
         if (login.text.toString().isNotEmpty() and pass.text.toString().isNotEmpty()) {
-            val intent = Intent(this, CalculateScreen::class.java)
-            startActivity(intent)
+            //проверка на то, что пользовател  ввёл корректный логи и пароль
+            if (login.text.toString() == correctLogin && pass.text.toString() == correctPassword) {
+                //переход на второй экран
+                val intent = Intent(this, CalculateScreen::class.java)
+                startActivity(intent)
+            }
+            //вывод сообщения об ошибке, что логин или пароль не верный
+            else { Snackbar.make(view,"Неверный логин или пароль", Snackbar.LENGTH_LONG).show()}
+        //вывод сообщения об ошибке, что пользователь не заполнил какое-либо поле
         } else {
             val alert = AlertDialog.Builder(this)
                 .setTitle("Ошибка")
-                .setMessage("Введите логин и пароль!")
+                .setMessage("Есть незаполненые поля!")
                 .setPositiveButton("OK", null)
                 .create()
                 .show()

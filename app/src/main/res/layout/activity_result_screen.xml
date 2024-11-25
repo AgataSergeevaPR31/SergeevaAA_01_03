@@ -7,6 +7,7 @@
     android:background="@color/lightblue"
     tools:context=".ResultScreen">
 
+
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +41,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
     <TextView
         android:id="@+id/numb"

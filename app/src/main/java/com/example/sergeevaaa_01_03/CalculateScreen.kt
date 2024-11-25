@@ -27,17 +27,22 @@ class CalculateScreen : AppCompatActivity() {
     }
 
     fun onResultScreen(view: View) {
+        //берем выбранное значение в спиннере
         val apartment = spinner.selectedItem
+        //берем значение, которе ввёл пользователь
         val numb = number.text.toString().toIntOrNull()
 
+        //проверка на то, что поле для ввода метров не пустое
         if (numb != null) {
             if (numb >= 1) {
                 val count : Double = 100.0
                 var res : Double = 0.0
                 val choose: String = apartment.toString()
 
+                //смотри,что выбрал пользователь в спиннере
                 when (choose) {
                     "1. 1-комнатная квартира" -> { if (numb >= 28 && numb <= 38) res = numb * 1.4 * count
+                    //вывод сообщения о том, что пользователь ввёл некорректное количество метров для выбранной квартиры
                     else {val alert = AlertDialog.Builder(this)
                         .setTitle("Ошибка")
                         .setMessage("Неподходящее кол-во метров для 1-комнатной кв.!")
@@ -68,21 +73,26 @@ class CalculateScreen : AppCompatActivity() {
                     else -> res = 0.0
                 }
 
+                //округляем и выводим результат
                 var round = String.format("%.2f", res)
                 result.setText("$round метров")
 
+                //переход на третий экран с результатом с задержкой в 3 секунды
                 Handler().postDelayed({
+
+                    val intent = Intent(this, ResultScreen::class.java)
+                    //передаем на третий экран данные
                     intent.putExtra("result", res.toString())
                     intent.putExtra("number", numb.toString())
-                    val intent = Intent(this, ResultScreen::class.java)
-
                     startActivity(intent)
                 }, 3000)
 
             }
+            //вывод в поле с результатом сообщения о том, что пользователь ввёл нулевое значение
             else result.text = "Нет у вас квартиры!"
         }
         else {
+            //вывод сообщения о том, что пользователь не ввёл кол-во метров в квартире
             val alert = AlertDialog.Builder(this)
                 .setTitle("Ошибка")
                 .setMessage("Введите количество метров!")
@@ -91,5 +101,11 @@ class CalculateScreen : AppCompatActivity() {
                 .show()
         }
 
+    }
+
+    //событие для перехода на первый экран регистрации
+    fun onFlatScreen(view: View) {
+        val intent = Intent(this, FlatBank::class.java)
+        startActivity(intent)
     }
 }

@@ -15,6 +15,7 @@
     <string name="textres">Результат расчёта</string>
     <string name="textnum">Метры</string>
     <string name="_1_1">1. 1-комнатная квартира</string>
+    <string name="vendetta">на главный экран</string>
 
     <string-array name="Apartment">
         <item>1. 1-комнатная квартира</item>

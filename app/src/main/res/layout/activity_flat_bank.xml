@@ -31,7 +31,7 @@
                 android:layout_width="50sp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="10sp"
-                app:srcCompat="@drawable/icon">
+                app:srcCompat="@drawable/icon1">
             </ImageView>
 
             <TextView
